@@ -1,0 +1,81 @@
+:root {
+    --night: #151515;
+    --dim-gray: #6C6D70;
+    --dark-goldenrod: #9D802E;
+    --whatsapp-green: #25D366;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--night);
+    font-family: Arial, sans-serif;
+}
+
+.popup-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.popup-btn {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--dim-gray);
+    color: var(--white);
+    padding: 10px 11px;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(80%);
+}
+
+.popup-btn:hover {
+    transform: translateX(0);
+    color: var(--white);
+}
+
+.whatsapp {
+    background-color: var(--whatsapp-green);
+}
+
+.call {
+    background-color: var(--dark-goldenrod);
+}
+
+.popup-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.popup-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--white);
+    flex-shrink: 0;
+    /* Prevent the SVG from shrinking */
+}
+
+.popup-btn img,
+.popup-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    /* Ensures SVG behaves like an image */
+}
+
+.popup-btn span {
+    white-space: nowrap;
+    /* Prevents text from breaking */
+    display: inline-block;
+    /* Ensures text stays visible */
+}

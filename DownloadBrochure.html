@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Brochure - Lodha Crown Kolshet Thane</title>
+    <link rel="stylesheet" type="text/css" href="css2/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css2/style.css">
+    <link rel="stylesheet" href="css2/popup.css">
+    <style>
+        /* General Section Styling */
+        body {
+            background: #ffffff;
+        }
+
+        .brochure-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .brochure-content {
+            background: #f4f4f9;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .brochure-content h2 {
+            font-size: 36px;
+            color: #1f386e;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .brochure-content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Enhanced Button Styling */
+        .download-btn {
+            background: linear-gradient(135deg, #1f386e, #0056b3);
+            color: #fff;
+            font-size: 22px;
+            padding: 15px 60px;
+            border: none;
+            border-radius: 50px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn span {
+            margin-right: 10px;
+        }
+
+        .download-btn::after {
+            content: '📥';
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            transition: right 0.4s ease;
+        }
+
+        .download-btn:hover::after {
+            right: 20px;
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            border: 6px solid #9D802Eff;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .popup-content input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .popup-content button {
+            background-color: #1f386e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .popup-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .success-message {
+            color: #28a745;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand page-scroll" href="https://starnewhomes.com/" target="_blank"><img
+                        class="lodha_logo" src="./img/lodha.png"></a>
+                <div class="phone"><span>Call Today</span>(+91)9892457482</div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" class="page-scroll">back to home</a></li>
+                    <li><a href="contactus.html" class="page-scroll">contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="brochure-section">
+        <div class="brochure-content">
+            <h2>Download Our Brochure</h2>
+            <p>Unlock exclusive insights about your dream home. Get detailed information at your fingertips.</p>
+            <button class="download-btn" onclick="openPopup()">
+                <span>Download Now</span>
+            </button>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popupForm">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2>Enter Your Details</h2>
+            <form id="contactForm">
+                <input type="tel" id="contactNumber" placeholder="Enter Your Mobile Number" required
+                    pattern="[0-9]{10}">
+                <input type="email" id="contactEmail" placeholder="Enter Your Email Address" required>
+                <button type="submit">Get Brochure</button>
+                <p class="success-message" id="successMessage" style="display: none;">Thank you! Your brochure is being
+                    downloaded.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- POPUPS -->
+    <div class="popup-container">
+        <a href="https://wa.me/9892457482" target="_blank" class="popup-btn whatsapp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>Chat on WhatsApp</span>
+        </a>
+        <a href="tel:9892457482" class="popup-btn call">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="white"
+                    d="M6.62 10.79a15.091 15.091 0 006.59 6.59l2.2-2.2a1 1 0 011.06-.24 11.42 11.42 0 003.58.57 1 1 0 011 1v3.6a1 1 0 01-1 1A19 19 0 013 5a1 1 0 011-1h3.6a1 1 0 011 1 11.42 11.42 0 00.57 3.58 1 1 0 01-.24 1.06z" />
+            </svg>
+            <span>Call Us immediately</span>
+        </a>
+    </div>
+
+
+
+    <script>
+        function downloadBrochure() {
+            const pdfURL = "./pdf/Crown Kolshet - Lodha.pdf";
+            const a = document.createElement("a");
+            a.href = pdfURL;
+            a.download = "brochure.pdf";
+            a.click();
+        }
+    </script>
+    <script type="text/javascript" src="js2/downloadBrochure.js"></script>
+</body>
+
+</html>
